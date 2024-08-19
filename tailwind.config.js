@@ -26,10 +26,10 @@ export default {
             bgcolor:"#FAF2BE",
 		},
     backgroundImage:{
-		Bootcampimg:'url("/public/Bootcampbg.jpg")',
-		Workshopimg:'url("/public/Workshopbg.jpg")',
-		Liveclassimg:'url("/public/Liveclassbg.jpg")',
-		Webinarimg:'url("/public/Webinarbg.jpg")',
+		Bootcampimg:'url("/src/assets/images/Bootcampbg.jpg")',
+		Workshopimg:'url("/src/assets/images/Workshopbg.jpg")',
+		Liveclassimg:'url("/src/assets/images/Liveclassbg.jpg")',
+		Webinarimg:'url("/src/assets/images/Webinarbg.jpg")',
       },
     keyframes: {
 		  fadeIn: {

@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import React, {useEffect, useState} from "react";
-import img from "../../public/Workshopimg4.jpg"
-import imgg from "../../public/Workshopimg5.jpg"
-import imggg from "../../public/Workshopimg6.jpg"
+import img from "../../assets/images/Workshopimg4.jpg"
+import imgg from "../../assets/images/Workshopimg5.jpg"
+import imggg from "../../assets/images/Workshopimg6.jpg"
 
 export default function PastWorkshop() {
 

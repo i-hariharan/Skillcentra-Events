@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 import {useEffect, useState} from "react";
-import img from "../../public/Webinarimg1.jpg";
-import imgg from "../../public/Webinarimg2.jpg";
-import imggg from "../../public/Webinarimg3.jpg";
+import img from "../../assets/images/Webinarimg1.jpg";
+import imgg from "../../assets/images/Webinarimg2.jpg";
+import imggg from "../../assets/images/Webinarimg3.jpg";
 
 export default function PastWebinar() {
 

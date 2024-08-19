@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import React, {useEffect, useState} from "react";
-import img from "../../public/Liveclassimg4.jpg"
-import imgg from "../../public/Liveclassimg5.jpg"
-import imggg from "../../public/Liveclassimg6.jpg"
+import img from "../../assets/images/Bootcampimg4.jpg"
+import imgg from "../../assets/images/Bootcampimg5.jpg"
+import imggg from "../../assets/images/Bootcampimg6.jpg"
 
-export default function Recordedclass() {
+export default function PastBootcamp() {
 
     const cards = [
         {
@@ -68,7 +68,7 @@ export default function Recordedclass() {
           <div className="flex flex-col items-center gap-8">
             <div className="text-center sm:text-base">
               <h2 className="mb-4 text-4xl font-extrabold tracking-tight text-Darkblue">
-                Recorded Classes
+                Past Bootcamp
               </h2> 
               <div
                 className="flex flex-row justify-center items-center lg:space-x-[100px] p-5 w-full h-full transition-transform duration-500">
@@ -93,9 +93,10 @@ export default function Recordedclass() {
                           {card.desc}
                         </h1>
                       </div>
-                      <div className="flex flex-row justify-center items-center">
-                        <Link to='/Events/Liveclass/RecordedOverview'>
-                          <span className="underline flex text-md font-bold font-TimesNewRoman text-Yellow p-1 cursor-pointer rounded-lg">Explore</span>
+                      <div className="flex flex-row justify-between max-md:space-x-[150px] lg:pr-3">
+                        <span className="flex justify-start font-bold text-White font-TimesNewRoman p-1 lg:pl-3">2 days</span>
+                        <Link to='/Events/Bootcamp/Overview'>
+                          <span className="underline flex text-md justify-end text-Yellow p-1 cursor-pointer rounded-lg">See Details</span>
                         </Link>
                       </div>
                     </div>

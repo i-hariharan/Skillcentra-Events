@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
-import img from "../../public/Bootcampimg1.jpg";
-import imgg from "../../public/Bootcampimg2.jpg";
-import imggg from "../../public/Bootcampimg3.jpg";
-import PastBootcamp from "../SubPages/PastBootcamp";
-import Feedback from "../../public/Feedbackimg.jpg";
+import img from "../../assets/images/Workshopimg1.jpg";
+import imgg from "../../assets/images/Workshopimg2.jpg";
+import imggg from "../../assets/images/Workshopimg3.jpg";
+import PastWorkshop from "../SubPages/PastWorkshop";
+import Feedback from "../../assets/images/Feedbackimg.jpg";
 
-export default function Bootcamp() {
-  
+export default function Workshop() {
   const [showForm, setShowForm] = useState(false);
 
   const handleClick = () => {
@@ -16,6 +15,35 @@ export default function Bootcamp() {
   const handle = () => {
     setShowForm(false);
   };
+
+  const RegisterForm = () => {
+    // State for form fields
+    const [email, setEmail] = useState('');
+    const [name, setName] = useState('');
+    const [phone, setPhone] = useState('');
+    const [interest, setInterest] = useState('');
+    const [showForm, setShowForm] = useState(true);
+  
+    // Handle form submission
+    const handleSubmit = async (event) => {
+      event.preventDefault();
+  
+      const formData = {
+        email,
+        name,
+        phone,
+        interest,
+      };
+
+      console.log('Form data:', formData);
+
+    }}
+
+      const handleClose = () => {
+        setShowForm(false);
+      };
+    
+
 
   const cards = [
     {
@@ -74,10 +102,10 @@ export default function Bootcamp() {
 
   return (
     <section className="flex flex-col w-full h-full max-md:space-y-5 place-items-center max-md:pb-16">
-      <div className="relative flex justify-center items-center h-[250px] w-full md:w-full md:h-[600px] rounded-lg lg:mb-5 bg-Bootcampimg bg-cover bg-center">
+      <div className="relative flex justify-center items-center h-[250px] w-full md:w-full md:h-[600px] rounded-lg lg:mb-5 bg-Workshopimg bg-cover bg-center">
         <div className="absolute mt-[40px] w-full h-full text-white md:mt-[250px] max-md:pt-[70px] lg:py-10 px-6 md:px-12 w-[50%] md:block">
           <h2 className="flex justify-center items-center lg:mt-[40px] text-4xl md:text-6xl font-extrabold pb-10 text-White font-TimesNewRoman">
-            Bootcamp
+            Workshop
           </h2>
         </div>
       </div>
@@ -88,7 +116,7 @@ export default function Bootcamp() {
           <div className="flex flex-col items-center gap-8">
             <div className="text-center sm:text-base">
               <h2 className="mb-4 text-4xl font-extrabold tracking-tight text-Yellow">
-                Upcoming Bootcamp
+                Upcoming Workshop
               </h2>
               <h2 className="mt-5 mb-5 text-2xl font-extrabold tracking-tight text-White">
                 Our Top Courses
@@ -140,7 +168,7 @@ export default function Bootcamp() {
       </div>
 
       {/**past Bootcamp */}
-      <PastBootcamp />
+      <PastWorkshop />
 
       <div className="flex flex-col bg-Darkblue w-full h-full mx-auto pb-5">
         <h1 className="flex justify-center items-center text-2xl text-Yellow font-TimesNewRoman font-bold mt-5 mb-5">
@@ -193,7 +221,7 @@ export default function Bootcamp() {
                   <h2 className="text-2xl font-bold text-center">
                     Register Now!
                   </h2>
-                  <button onClick={handle} className="text-gray-500">
+                  <button onClick={handleClose} className="text-gray-500">
                     ✕
                   </button>
                 </div>
@@ -206,6 +234,7 @@ export default function Bootcamp() {
                       type="email"
                       placeholder="Enter your email ID"
                       className="mt-1 block w-full p-2 placeholder-black rounded-md bg-[#FAF2BE] "
+                      onClick={(e) => setEmail(e.target.value)}
                     />
                   </div>
                   <div>
@@ -216,6 +245,7 @@ export default function Bootcamp() {
                       type="text"
                       placeholder="Enter your Name"
                       className="mt-1 block w-full  p-2  placeholder-black  rounded-md bg-[#FAF2BE]"
+                      onClick={(e) => setName(e.target.value)}
                     />
                   </div>
                   <div>
@@ -226,6 +256,7 @@ export default function Bootcamp() {
                       type="text"
                       placeholder="+91"
                       className="mt-1 block w-full p-2 placeholder-black rounded-md bg-[#FAF2BE]"
+                      onClick={(e) => setPhone(e.target.value)}
                     />
                   </div>
                   <div>
@@ -236,6 +267,7 @@ export default function Bootcamp() {
                       type="text"
                       placeholder=""
                       className="placeholder-black mt-1 block w-full p-2 bg-[#FAF2BE] rounded-md"
+                      onClick={(e) => setInterest(e.target.value)}
                     />
                   </div>
                   <button

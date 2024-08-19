@@ -1,7 +1,7 @@
 import React, {useState} from "react";
-import img from "../../public/Overviewimg.jpg";
-import imgg from "../../public/Hostimg.jpg";
-import imggg from "../../public/Certificate.jpg";
+import img from "../../assets/images/Overviewimg.jpg";
+import imgg from "../../assets/images/Hostimg.jpg";
+import imggg from "../../assets/images/Certificate.jpg";
 
 export default function BootcampOverview() {
 
@@ -14,6 +14,35 @@ export default function BootcampOverview() {
    const handle =() =>{
     setShowForm(false);
    };
+
+
+   const RegisterForm = () => {
+    // State for form fields
+    const [email, setEmail] = useState('');
+    const [name, setName] = useState('');
+    const [phone, setPhone] = useState('');
+    const [link, setLink] = useState('');
+    const [showForm, setShowForm] = useState(true);
+  
+    // Handle form submission
+    const handleSubmit = async (event) => {
+      event.preventDefault();
+  
+      const formData = {
+        email,
+        name,
+        phone,
+        link,
+      };
+
+      console.log('Form data:', formData);
+
+    }}
+
+      const handleClose = () => {
+        setShowForm(false);
+      };
+    
 
 
 
@@ -153,7 +182,7 @@ export default function BootcampOverview() {
                   <h2 className="text-2xl font-bold text-center">
                     Register Now!
                   </h2>
-                  <button onClick={handle} className="text-gray-500">
+                  <button onClick={handleClose} className="text-gray-500">
                     ✕
                   </button>
                 </div>
@@ -166,6 +195,7 @@ export default function BootcampOverview() {
                       type="email"
                       placeholder="Enter your email ID"
                       className="mt-1 block w-full p-2 placeholder-black rounded-md bg-[#FAF2BE] "
+                      onClick={(e) => setEmail(e.target.value)}
                     />
                   </div>
                   <div>
@@ -176,6 +206,7 @@ export default function BootcampOverview() {
                       type="text"
                       placeholder="Enter your Name"
                       className="mt-1 block w-full  p-2  placeholder-black  rounded-md bg-[#FAF2BE]"
+                      onClick={(e) => setName(e.target.value)}
                     />
                   </div>
                   <div>
@@ -186,6 +217,7 @@ export default function BootcampOverview() {
                       type="text"
                       placeholder="+91"
                       className="mt-1 block w-full p-2 placeholder-black rounded-md bg-[#FAF2BE]"
+                      onClick={(e) => setPhone(e.target.value)}
                     />
                   </div>
                   <div>
@@ -196,11 +228,13 @@ export default function BootcampOverview() {
                       type="text"
                       placeholder=""
                       className="placeholder-black mt-1 block w-full p-2 bg-[#FAF2BE] rounded-md"
+                      onClick={(e) => setLink(e.target.value)}
                     />
                   </div>
                   <button
                     type="submit"
                     className="w-full bg-[#F5CF6B] text-Darkblue font-bold p-2 rounded-md mt-4"
+                    
                   >
                     Submit
                   </button>

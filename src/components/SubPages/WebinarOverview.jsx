@@ -1,6 +1,6 @@
 import React from "react";
-import img from "../../public/Liveclassimg6.jpg";
-import Host from "../../public/Hostimg.jpg";
+import img from "../../assets/images/Liveclassimg6.jpg";
+import Host from "../../assets/images/Hostimg.jpg";
 
 
 export default function WebinarOverview() {

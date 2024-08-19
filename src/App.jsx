@@ -1,13 +1,13 @@
 import React from 'react'
 import {BrowserRouter, Routes, Route} from "react-router-dom"
-import Bootcamp from './Pages/Bootcamp'
-import BootcampOverview from './SubPages/BootcampOverview'
-import Workshop from "./Pages/Workshop"
-import WorkshopOverview from "./SubPages/WorkshopOverview"
-import Liveclass from "./Pages/Liveclass"
-import RecordedOverview from "./SubPages/RecordedOverview"
-import Webinar from "./Pages/Webinar"
-import WebinarOverview from "./SubPages/WebinarOverview"
+import Bootcamp from './components/Pages/Bootcamp'
+import BootcampOverview from './components/SubPages/BootcampOverview'
+import Workshop from "./components/Pages/Workshop"
+import WorkshopOverview from "./components/SubPages/WorkshopOverview"
+import Liveclass from "./components/Pages/Liveclass"
+import RecordedOverview from "./components/SubPages/RecordedOverview"
+import Webinar from "./components/Pages/Webinar"
+import WebinarOverview from "./components/SubPages/WebinarOverview"
 
 function App() {
 

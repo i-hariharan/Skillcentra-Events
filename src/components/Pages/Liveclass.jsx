@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
-import img from "../../public/Workshopimg1.jpg";
-import imgg from "../../public/Workshopimg2.jpg";
-import imggg from "../../public/Workshopimg3.jpg";
-import PastWorkshop from "../SubPages/PastWorkshop";
-import Feedback from "../../public/Feedbackimg.jpg";
+import React, {useEffect, useState} from "react";
+import img from "../../assets/images/Liveclassimg1.jpg"
+import imgg from "../../assets/images/Liveclassimg2.jpg"
+import imggg from "../../assets/images/Liveclassimg3.jpg"
+import Recordedclass from "../SubPages/Recordedclass"
 
-export default function Workshop() {
+export default function Liveclass() {
+
   const [showForm, setShowForm] = useState(false);
 
   const handleClick = () => {
@@ -15,6 +15,34 @@ export default function Workshop() {
   const handle = () => {
     setShowForm(false);
   };
+
+  const RegisterForm = () => {
+    // State for form fields
+    const [email, setEmail] = useState('');
+    const [name, setName] = useState('');
+    const [phone, setPhone] = useState('');
+    const [interest, setInterest] = useState('');
+    const [showForm, setShowForm] = useState(true);
+  
+    // Handle form submission
+    const handleSubmit = async (event) => {
+      event.preventDefault();
+  
+      const formData = {
+        email,
+        name,
+        phone,
+        interest,
+      };
+
+      console.log('Form data:', formData);
+
+    }}
+
+      const handleClose = () => {
+        setShowForm(false);
+      };
+    
 
   const cards = [
     {
@@ -73,10 +101,11 @@ export default function Workshop() {
 
   return (
     <section className="flex flex-col w-full h-full max-md:space-y-5 place-items-center max-md:pb-16">
-      <div className="relative flex justify-center items-center h-[250px] w-full md:w-full md:h-[600px] rounded-lg lg:mb-5 bg-Workshopimg bg-cover bg-center">
-        <div className="absolute mt-[40px] w-full h-full text-white md:mt-[250px] max-md:pt-[70px] lg:py-10 px-6 md:px-12 w-[50%] md:block">
+      <div className="relative flex justify-center items-center h-[250px] w-full md:w-full md:h-[600px] rounded-lg lg:mb-5 bg-Liveclassimg bg-cover bg-center">
+        <div
+          className="absolute mt-[40px] w-full h-full text-white md:mt-[250px] max-md:pt-[70px] lg:py-10 px-6 md:px-12 w-[50%] md:block">
           <h2 className="flex justify-center items-center lg:mt-[40px] text-4xl md:text-6xl font-extrabold pb-10 text-White font-TimesNewRoman">
-            Workshop
+            Innovative Live Classes
           </h2>
         </div>
       </div>
@@ -87,20 +116,20 @@ export default function Workshop() {
           <div className="flex flex-col items-center gap-8">
             <div className="text-center sm:text-base">
               <h2 className="mb-4 text-4xl font-extrabold tracking-tight text-Yellow">
-                Upcoming Workshop
+                Upcoming Live Classes
               </h2>
               <h2 className="mt-5 mb-5 text-2xl font-extrabold tracking-tight text-White">
                 Our Top Courses
               </h2>
               <p className="flex justify-center items-center mb-5 text-center w-full mx-auto font-bold font-TimesNewRoman text-lg text-White text-justify max-md:hidden lg:mt-5">
-                Discover our top courses and elevate your skills to the next
-                level.
+                Discover our top courses and elevate your skills to the next level.
               </p>
-              <div className="flex flex-row justify-center items-center lg:space-x-[100px] bg-Darkblue p-5 w-full h-full transition-transform duration-500">
+              <div
+                className="flex flex-row justify-center items-center lg:space-x-[100px] bg-Darkblue p-5 w-full h-full transition-transform duration-500">
                 {getVisibleCards().map((card, index) => (
                   <div
                     key={index}
-                    className="flex justify-evenly lg:space-x-10 rounded-lg"
+                    className="flex justify-evenly lg:space-x-10 rounded-lg"  
                   >
                     <div className="flex flex-col w-[300px] h-full justify-between bg-White hover:bg-Yellow pt-5 pb-5 max-md:items-center transform transition duration-500 hover:scale-105 hover:shadow-2xl rounded-lg">
                       <img
@@ -119,11 +148,8 @@ export default function Workshop() {
                         </h1>
                       </div>
                       <div className="flex flex-row justify-between max-md:space-x-[150px] lg:pr-3">
-                        <span className="flex justify-start font-bold font-TimesNewRoman p-1 lg:pl-3">
-                          2 days
-                        </span>
-                        <button
-                          className="flex justify-end bg-Darkblue text-Yellow p-1 rounded-lg"
+                        <span className="flex justify-start font-bold font-TimesNewRoman p-1 lg:pl-3">2 days</span>
+                        <button className="flex justify-end bg-Darkblue text-Yellow p-1 rounded-lg"
                           onClick={handleClick}
                         >
                           Enroll Now
@@ -139,43 +165,7 @@ export default function Workshop() {
       </div>
 
       {/**past Bootcamp */}
-      <PastWorkshop />
-
-      <div className="flex flex-col bg-Darkblue w-full h-full mx-auto pb-5">
-        <h1 className="flex justify-center items-center text-2xl text-Yellow font-TimesNewRoman font-bold mt-5 mb-5">
-          Student Feedback
-        </h1>
-        <div className="flex lg:flex-row max-md:flex-col lg:justify-between max-md:justify-center max-md:items-center">
-          <div className="flex flex-col lg:pl-10 lg:justify-start lg:w-[700px] max-md:w-full max-md:p-3 max-md:justify-center max-md:items-center">
-            <label className="flex text-lg text-Yellow p-3 font-TimesNewRoman font-bold">
-              Email
-            </label>
-            <input
-              type="text"
-              placeholder="Email"
-              className="flex w-full p-3 h-[50px] rounded-lg"
-            />
-            <label className="flex text-lg text-Yellow p-3 font-TimesNewRoman font-bold">
-              Share Your Thoughts
-            </label>
-            <textarea
-              type="text"
-              placeholder="suggestion"
-              className="flex w-full p-3 h-[150px] rounded-lg"
-            />
-            <button className="mt-5 flex justify-center items-center bg-Yellow w-full text-lg  text-Darkblue font-TimesNewRoman font-bold p-3 rounded">
-              Submit
-            </button>
-          </div>
-          <div className="max-md:hidden flex flex-col justify-end p-10 h-full">
-            <img
-              src={Feedback}
-              alt=""
-              className="w-full h-[340px] object-cover rounded-lg"
-            />
-          </div>
-        </div>
-      </div>
+      <Recordedclass />
 
       {/* RegisterForm */}
 
@@ -192,7 +182,7 @@ export default function Workshop() {
                   <h2 className="text-2xl font-bold text-center">
                     Register Now!
                   </h2>
-                  <button onClick={handle} className="text-gray-500">
+                  <button onClick={handleClose} className="text-gray-500">
                     ✕
                   </button>
                 </div>
@@ -205,6 +195,7 @@ export default function Workshop() {
                       type="email"
                       placeholder="Enter your email ID"
                       className="mt-1 block w-full p-2 placeholder-black rounded-md bg-[#FAF2BE] "
+                      onClick={(e) => setEmail(e.target.value)}
                     />
                   </div>
                   <div>
@@ -215,6 +206,7 @@ export default function Workshop() {
                       type="text"
                       placeholder="Enter your Name"
                       className="mt-1 block w-full  p-2  placeholder-black  rounded-md bg-[#FAF2BE]"
+                      onClick={(e) => setName(e.target.value)}
                     />
                   </div>
                   <div>
@@ -225,6 +217,7 @@ export default function Workshop() {
                       type="text"
                       placeholder="+91"
                       className="mt-1 block w-full p-2 placeholder-black rounded-md bg-[#FAF2BE]"
+                      onClick={(e) => setPhone(e.target.value)}
                     />
                   </div>
                   <div>
@@ -235,6 +228,7 @@ export default function Workshop() {
                       type="text"
                       placeholder=""
                       className="placeholder-black mt-1 block w-full p-2 bg-[#FAF2BE] rounded-md"
+                      onClick={(e) => setInterest(e.target.value)}
                     />
                   </div>
                   <button
@@ -249,6 +243,7 @@ export default function Workshop() {
           </div>
         )}
       </div>
+
     </section>
   );
 }

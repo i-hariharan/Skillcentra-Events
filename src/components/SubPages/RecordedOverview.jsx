@@ -1,7 +1,7 @@
 import React from "react";
-import img from "../../public/Overviewimg.jpg";
-import Host from "../../public/Hostimg.jpg"
-import imggg from "../../public/Certificate.jpg"
+import img from "../../assets/images/Overviewimg.jpg";
+import Host from "../../assets/images/Hostimg.jpg"
+import imggg from "../../assets/images/Certificate.jpg"
 import { FaQuestionCircle } from "react-icons/fa";
 import { IoMdTime } from "react-icons/io";
 

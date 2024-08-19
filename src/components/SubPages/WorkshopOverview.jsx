@@ -1,7 +1,8 @@
 import React, {useState} from "react";
-import img from "../../public/Overviewimg.jpg";
-import Host from "../../public/Hostimg.jpg"
-import imggg from "../../public/Certificate.jpg"
+import img from "../../assets/images/Overviewimg.jpg";
+import Host from "../../assets/images/Hostimg.jpg"
+import imggg from "../../assets/images/Certificate.jpg"
+import { MdSettingsSystemDaydream } from "react-icons/md";
 
 export default function WorkshopOverview() {
 
@@ -14,6 +15,33 @@ export default function WorkshopOverview() {
    const handle =() =>{
     setShowForm(false);
    };
+
+   const RegisterForm = () => {
+    // State for form fields
+    const [email, setEmail] = useState('');
+    const [name, setName] = useState('');
+    const [phone, setPhone] = useState('');
+    const [link, setLink] = useState('');
+    const [showForm, setShowForm] = useState(true);
+  
+    // Handle form submission
+    const handleSubmit = async (event) => {
+      event.preventDefault();
+  
+      const formData = {
+        email,
+        name,
+        phone,
+        link,
+      };
+
+      console.log('Form data:', formData);
+
+    }}
+
+      const handleClose = () => {
+        setShowForm(false);
+      };
 
   const cards = [
     {
@@ -143,7 +171,7 @@ export default function WorkshopOverview() {
                   <h2 className="text-2xl font-bold text-center">
                     Register Now!
                   </h2>
-                  <button onClick={handle} className="text-gray-500">
+                  <button onClick={handleClose} className="text-gray-500">
                     ✕
                   </button>
                 </div>
@@ -156,6 +184,7 @@ export default function WorkshopOverview() {
                       type="email"
                       placeholder="Enter your email ID"
                       className="mt-1 block w-full p-2 placeholder-black rounded-md bg-[#FAF2BE] "
+                      onClick={(e) => setEmail(e.target.value)}
                     />
                   </div>
                   <div>
@@ -166,6 +195,7 @@ export default function WorkshopOverview() {
                       type="text"
                       placeholder="Enter your Name"
                       className="mt-1 block w-full  p-2  placeholder-black  rounded-md bg-[#FAF2BE]"
+                      onClick={(e) => setName(e.target.value)}
                     />
                   </div>
                   <div>
@@ -176,6 +206,7 @@ export default function WorkshopOverview() {
                       type="text"
                       placeholder="+91"
                       className="mt-1 block w-full p-2 placeholder-black rounded-md bg-[#FAF2BE]"
+                      onClick={(e) => setPhone(e.target.value)}
                     />
                   </div>
                   <div>
@@ -186,11 +217,13 @@ export default function WorkshopOverview() {
                       type="text"
                       placeholder=""
                       className="placeholder-black mt-1 block w-full p-2 bg-[#FAF2BE] rounded-md"
+                      onClick={(e) => setLink(e.target.value)}
                     />
                   </div>
                   <button
                     type="submit"
                     className="w-full bg-[#F5CF6B] text-Darkblue font-bold p-2 rounded-md mt-4"
+                    
                   >
                     Submit
                   </button>

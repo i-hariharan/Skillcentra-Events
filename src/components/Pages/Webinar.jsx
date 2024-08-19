@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import PastWebinar from "../SubPages/PastWebinar";
-import img from "../../public/Overviewimg.jpg";
+import img from "../../assets/images/Overviewimg.jpg";
 
 export default function Webinar() {
 
